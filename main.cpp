@@ -25,6 +25,11 @@ int main()
 
     int scores[5];
     printf("THIS IS TEST MSG FOR GIT!");
+    printf("THIS IS TEST MSG FOR GIT!");
+    printf("THIS IS TEST MSG FOR GIT!");
+    printf("THIS IS TEST MSG FOR GIT!");
+    printf("THIS IS TEST MSG FOR GIT!");
+
     int sum = 0;
     for (int i = 0; i < 5; ++i) {
         printf("Score %d: ", i+1);

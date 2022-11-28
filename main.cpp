@@ -16,10 +16,10 @@ int main()
     /*
     int ses_base[1000][1000];
     */
+    Students student[10];
     for(int cycle = 0; cycle < amount_students; cycle++){
         printf("[+] Student %d\n", cycle+1);
     //Student
-        Students student;
         //int temp_scores_names[5];
         char name[15];
         char last_name[15];
@@ -31,9 +31,9 @@ int main()
         printf("[+] Group: ");
         scanf("%s",&group);
         
-        student.set_name(name);
-        student.set_last_name(last_name);
-        student.set_group(group);
+        student[cycle].set_name(name);
+        student[cycle].set_last_name(last_name);
+        student[cycle].set_group(group);
 
         int ses[5];
         int sum = 0;
@@ -42,26 +42,28 @@ int main()
             scanf("%d", &ses[i]);
             sum += ses[i];
         }
-        student.set_ses(ses);
+        student[cycle].set_ses(ses);
         float average_ball = sum / 5.0;
-        student.set_average_ball(average_ball);
+        student[cycle].set_average_ball(average_ball);
         //Student object created ^
-        printf("%s\n", student.get_name());
-        printf("%s\n", student.get_last_name());
+        /*
+        printf("%s\n", student[cycle].get_name());
+        printf("%s\n", student[cycle].get_last_name());
         printf("%s\n", student.get_group());
         printf("%d\n", strlen(student.get_name()));
         for(int i = 0; i < strlen(student.get_name()); i++){
             temp[cycle][i] = student.get_name()[i];
-        }
+        }*/
         /* fix idea 
         char sum[1000];
         sum = student.get_name() + student.get_last_name() + student.get_group();
         */
         //student_base_names[cycle] = student.get_all_name();
     }
-    for(int i = 0; i < amount_students; i++){
-        printf("%s\n", temp[i]);
-    }
+    printf("%s", student[0].get_name());
+    //for(int i = 0; i < amount_students; i++){
+        //printf("%s\n", temp[i]);
+    //}
     /*
     for(int i = 0; i < amount_students; i++){
         for(int j = 0; j < 3; j++){

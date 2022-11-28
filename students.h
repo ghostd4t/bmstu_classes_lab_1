@@ -9,7 +9,7 @@ class Students {
                 
             }
         }
-        void * get_name()
+        char * get_name()
         {
             return name;
         }
@@ -19,7 +19,7 @@ class Students {
                 last_name[i] = student_last_name[i];
             }
         }
-        void * get_last_name()
+        char * get_last_name()
         {
             return last_name;
         }
@@ -30,18 +30,21 @@ class Students {
             }
         }
 
-        void *get_group(){
+        char *get_group(){
             return group;
         }
-        void set_scores(int student_scores[])
+        void set_ses(int student_ses[])
         {
             for (int i = 0; i <= 4; ++i) {
-                scores[i] = student_scores[i];
+                ses[i] = student_ses[i];
             }
         }
         void set_average_ball(float ball)
         {
             average_ball = ball;
+        }
+        int *get_ses(){
+            return ses;
         }
         float get_average_ball()
         {
@@ -49,7 +52,7 @@ class Students {
         }
 
     private:
-        int scores[5];
+        int ses[5];
         float average_ball;
         char name[15];
         char group[15];

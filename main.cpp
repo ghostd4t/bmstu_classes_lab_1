@@ -47,7 +47,6 @@ int main()
         student[cycle].set_average_ball(average_ball);
         //Student object created
     }
-    printf("%s", student[0].get_name());
     /* printf("%s\n", student[cycle].get_name());
         printf("%s\n", student[cycle].get_last_name());
         printf("%s\n", student.get_group());
@@ -71,7 +70,7 @@ int main()
                 array_main[j+1] = temp;
                 index_temp = array_sub[j];
                 array_sub[j] = array_sub[j+1];
-                array_sub[j+1] = array_sub[j];
+                array_sub[j+1] = index_temp;
             }
         }
     }

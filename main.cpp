@@ -11,9 +11,10 @@ int main()
     int amount_students = 1;
     scanf("%d", amount_students);
     */
-    int const amount_students = 1;
+    int const amount_students = 2;
     
     char *student_base_names[amount_students][3];
+    int *student_base_ses[amount_students][5];
     /*
     int ses_base[1000][1000];
     */
@@ -51,15 +52,31 @@ int main()
         student_base_names[cycle][0] = student.get_name();
         student_base_names[cycle][1] = student.get_last_name();
         student_base_names[cycle][2] = student.get_group();
-        
+
+        for(int i = 0; i < 3; i++){
+            printf("%s ", student_base_names[cycle][i]);
+        }
         printf("\n");
+        for(int i = 0; i < 5; i++){
+            student_base_ses[cycle][i] = student.get_ses();
+        }
+    }
+    for(int k = 0; k < 2; k++){
+        for(int m = 0; m < 3; m++){
+            printf("%s", student_base_names[0][m]);
+        }
     }
     /*
     for(int i = 0; i < amount_students; i++){
         for(int j = 0; j < 3; j++){
             printf("%s ", student_base_names[i][j]);
         }
-
+        printf("\n");
+        printf("[+]Scores: ");
+        for(int j = 0; j < 5; j++){
+            printf("%d ", student_base_ses[i][j]);
+        }
+        printf("\n");
     }
     */
     return 0;

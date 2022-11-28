@@ -6,9 +6,7 @@
 
 
 int main()
-{
-
-    
+{    
     //Student
     Students student;
 

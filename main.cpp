@@ -5,7 +5,7 @@
 #include "students.h"
 
 int main()
-{    
+{
     printf("[+] Amount of students: ");
     int amount_students;
     scanf("%d", &amount_students);
@@ -45,37 +45,41 @@ int main()
         student[cycle].set_ses(ses);
         float average_ball = sum / 5.0;
         student[cycle].set_average_ball(average_ball);
-        //Student object created ^
-        /*
-        printf("%s\n", student[cycle].get_name());
+        //Student object created
+    }
+    printf("%s", student[0].get_name());
+    /* printf("%s\n", student[cycle].get_name());
         printf("%s\n", student[cycle].get_last_name());
         printf("%s\n", student.get_group());
         printf("%d\n", strlen(student.get_name()));
         for(int i = 0; i < strlen(student.get_name()); i++){
             temp[cycle][i] = student.get_name()[i];
         }*/
-        /* fix idea 
-        char sum[1000];
-        sum = student.get_name() + student.get_last_name() + student.get_group();
-        */
-        //student_base_names[cycle] = student.get_all_name();
-    }
-    printf("%s", student[0].get_name());
-    //for(int i = 0; i < amount_students; i++){
-        //printf("%s\n", temp[i]);
-    //}
-    /*
+    float array_main[10];
+    int array_sub[10];
     for(int i = 0; i < amount_students; i++){
-        for(int j = 0; j < 3; j++){
-            printf("%s ", student_base_names[i][j]);
-        }
-        printf("\n");
-        printf("[+]Scores: ");
-        for(int j = 0; j < 5; j++){
-            printf("%d ", student_base_ses[i][j]);
-        }
-        printf("\n");
+        array_main[i] = student[i].get_average_ball();
+        array_sub[i] = i;
     }
-    */
+    for(int i = 0; i < amount_students; i++){
+        float temp;
+        int index_temp; 
+        for(int j = 0; j < amount_students - 1; j++){
+            if(array_main[j]  < array_main[j+1]){
+                temp = array_main[j];
+                array_main[j] = array_main[j+1];
+                array_main[j+1] = temp;
+                index_temp = array_sub[j];
+                array_sub[j] = array_sub[j+1];
+                array_sub[j+1] = array_sub[j];
+            }
+        }
+    }
+    printf("[+] Students rating:\n");
+    for(int i = 0; i < amount_students; i++){
+        printf("    %d. %s %s %s is %.2f\n", i+1, student[array_sub[i]].get_name(), student[array_sub[i]].get_last_name(),
+        student[array_sub[i]].get_group(), student[array_sub[i]].get_average_ball());
+    }
+    
     return 0;
 }

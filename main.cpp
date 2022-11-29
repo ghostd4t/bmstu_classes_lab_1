@@ -74,11 +74,20 @@ int main()
             }
         }
     }
+    printf("\n");
+    for(int i = 0; i < 50; i ++){
+        printf("/");
+    }
+    printf("\n");
     printf("[+] Students rating:\n");
     for(int i = 0; i < amount_students; i++){
         printf("    %d. %s %s %s is %.2f\n", i+1, student[array_sub[i]].get_name(), student[array_sub[i]].get_last_name(),
         student[array_sub[i]].get_group(), student[array_sub[i]].get_average_ball());
     }
+    for(int i = 0; i < 50; i ++){
+        printf("/");
+    }
+    printf("\n");
     
     return 0;
 }

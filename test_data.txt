@@ -1,0 +1,16 @@
+5
+Galunenko Vladislav 
+IU1-12
+5 5 4 4 4
+Bozin Pavel
+IU1-12
+5 5 5 5 5
+Busygin Alexander
+IU1-12
+3 3 4 4 5
+Senchenko Bogdan
+IU1-12
+5 5 5 5 4
+Melikyan Samvel
+IU1-12
+3 3 2 3 4

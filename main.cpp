@@ -80,9 +80,29 @@ int main()
     }
     printf("\n");
     printf("[+] Students rating:\n");
+
     for(int i = 0; i < amount_students; i++){
         printf("    %d. %s %s %s is %.2f\n", i+1, student[array_sub[i]].get_name(), student[array_sub[i]].get_last_name(),
         student[array_sub[i]].get_group(), student[array_sub[i]].get_average_ball());
+    }
+
+
+    float smarts_count = 0;
+    float ses_all[10];
+    float ses_all_index[10];
+    bool run = true;
+    printf("\n[+] High graders:\n");
+    for(int i = 0; i < amount_students; i ++){
+        run = true;
+        for(int j = 0; j < 5; j++){
+            if(student[array_sub[i]].get_ses()[j] == 2 || student[array_sub[i]].get_ses()[j] == 3){
+                run = false;
+            }
+        }
+        if (run){
+            printf("    %d. %s %s\n", i+1, student[array_sub[i]].get_last_name(),
+        student[array_sub[i]].get_group());
+        }
     }
     for(int i = 0; i < 50; i ++){
         printf("/");

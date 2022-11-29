@@ -78,12 +78,16 @@ int main()
     for(int i = 0; i < 50; i ++){
         printf("/");
     }
-    printf("\n");
+    printf("\n\n");
     printf("[+] Students rating:\n");
 
     for(int i = 0; i < amount_students; i++){
-        printf("    %d. %s %s %s is %.2f\n", i+1, student[array_sub[i]].get_name(), student[array_sub[i]].get_last_name(),
+        printf("    %d. %s %s %s [%.2f] (", i+1, student[array_sub[i]].get_name(), student[array_sub[i]].get_last_name(),
         student[array_sub[i]].get_group(), student[array_sub[i]].get_average_ball());
+        for(int j = 0; j < 4; j ++){
+            printf("%d, ", student[array_sub[i]].get_ses()[j]);
+        }
+        printf("%d)\n", student[array_sub[i]].get_ses()[4]);
     }
 
 
@@ -100,10 +104,15 @@ int main()
             }
         }
         if (run){
-            printf("    %d. %s %s\n", i+1, student[array_sub[i]].get_last_name(),
-        student[array_sub[i]].get_group());
+            printf("    %d. %s %s (", i+1, student[array_sub[i]].get_last_name(),
+            student[array_sub[i]].get_group());
+            for(int k = 0; k < 4; k ++){
+                printf("%d, ", student[array_sub[i]].get_ses()[k]);
+            }
+            printf("%d)\n", student[array_sub[i]].get_ses()[4]);
         }
     }
+    printf("\n");
     for(int i = 0; i < 50; i ++){
         printf("/");
     }
